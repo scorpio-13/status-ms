@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class StatusmsApplication {
+public class StatusMSApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(StatusmsApplication.class, args);
+		SpringApplication.run(StatusMSApplication.class, args);
 	}
 
 }
