@@ -36,8 +36,8 @@ class RootControllerTest {
 	 */
 	@Test
 	void testGetMessage() {
-		when(rootController.getMessage()).thenReturn("Hello Testing World"); 
-		assertEquals(rootController.getMessage(), "Hello Testing World");
+		when(rootController.getMessage()).thenReturn("Hello Testing World");
+		assertEquals("Hello Testing World", rootController.getMessage());
 	}
 
 	/**
@@ -47,7 +47,7 @@ class RootControllerTest {
 	@Test
 	void testGetMessage2() {
 		when(rootController.getMessage()).thenCallRealMethod();
-		assertEquals(rootController.getMessage(), "Hello World");
+		assertEquals("Hello World", rootController.getMessage());
 	}
 
 }

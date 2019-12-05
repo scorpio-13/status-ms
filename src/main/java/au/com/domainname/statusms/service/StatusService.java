@@ -27,6 +27,10 @@ import au.com.domainname.statusms.model.BuildStatusWrapperRO;
 @Service
 public class StatusService {
 
+	private StatusService() {
+
+	}
+
 	/**
 	 * Gets the application build status.
 	 *
@@ -39,7 +43,7 @@ public class StatusService {
 		if (null == buildInfo || StringUtils.isBlank(buildInfo.getProjectname())
 				|| StringUtils.isBlank(buildInfo.getVersion()) || StringUtils.isBlank(buildInfo.getDescription())
 				|| StringUtils.isBlank(buildInfo.getBuildhash())) {
-			return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 
 		BuildStatusRO tBuildStatusRO = new BuildStatusRO(buildInfo.getVersion(), buildInfo.getDescription(),
@@ -49,9 +53,7 @@ public class StatusService {
 		tApplicationBuildStatusMap.put(buildInfo.getProjectname(), Arrays.asList(tBuildStatusRO));
 
 		BuildStatusWrapperRO statusInfo = new BuildStatusWrapperRO(HttpStatus.OK, tApplicationBuildStatusMap);
-		ResponseEntity<Map<String, List<BuildStatusRO>>> responseEntity = new ResponseEntity<>(
-				statusInfo.getApplicationBuildStatusMap(), statusInfo.getStatus());
-		return responseEntity;
+		return new ResponseEntity<>(statusInfo.getApplicationBuildStatusMap(), statusInfo.getStatus());
 	}
 
 }

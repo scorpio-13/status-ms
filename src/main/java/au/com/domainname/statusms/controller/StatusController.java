@@ -25,7 +25,7 @@ public class StatusController {
 
 	@Autowired
 	BuildInformationComponent buildInfo;
-	
+
 	/**
 	 * Gets the application build status.
 	 *
