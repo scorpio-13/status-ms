@@ -131,6 +131,7 @@ Limitations and Risks
 9. Swagger schema should be defined.
 10. Artefact storage and gradle caching needs to be implemented
 11. Deployment tooling and strategy should be considered.
+
 Future Enhancements
 ------------------
 - Circuit Breaker Pattern - **Hystrix**
