@@ -56,6 +56,7 @@ class StatusControllerTest {
 		assertEquals(HttpStatus.OK, status2.getStatusCode());
 		assertNotNull(status2.getBody());
 
+		@SuppressWarnings("unchecked")
 		Map<String, List<BuildStatusRO>> t = (Map<String, List<BuildStatusRO>>) status2.getBody();
 
 		for (Map.Entry<String, List<BuildStatusRO>> me : t.entrySet()) {
