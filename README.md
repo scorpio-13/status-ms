@@ -51,38 +51,47 @@ Technical Documentation
 
 	http://localhost:8080/swagger-ui.html#/
 
-Local execution steps
+![](src/main/resources/static/SIMs-SwaggerUI.PNG)
+
+Local execution steps 
 ----------------------
 
 - Project Checkout
 
 		$ git clone git@github.com:scorpio-13/status-ms.git 
+		$ cd status-ms
+
+- Option 1: With Docker
+	- Build and test Docker image.
+		
+			$ docker build . -t test-image
+			$ docker image ls
+			$ docker run -p9090:8080 test-image
+
+- Option 2: Without Docker
  
-- Build and test
-
-		$ gradlew clean build
-
-- Package the jar
-
-		$ gradlew jar
-
-- Run the Executable Jar
-
-		$ java -jar java -jar build\libs\statusms-1.0.jar
-
-- Additional Steps(optional)  
-	- Execute tests 
-		
-			$ gradlew test
-		
+	- Build and test
+			
+			$ ./gradlew clean build
 	
-	- Generate Code Coverage Report
+	- Package the jar
+	
+			$ ./gradlew jar
+	
+	- Run the Executable Jar
+	
+			$ java -jar build/libs/statusms-1.0.jar
+	
+	- Additional Steps(optional)  
+		- Execute tests 
 			
-			$ gradlew jacocoTestReport
-		 Reports location - .
-	- Exit the CLI
+				$ ./gradlew test
 			
-			$ exit
+		
+		- Generate Code Coverage Report
+				
+				$ ./gradlew jacocoTestReport
+
 
 Coverage Report
 --------------
