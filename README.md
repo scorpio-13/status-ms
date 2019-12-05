@@ -1,4 +1,4 @@
-Status Information Microservice (SIMs)
+Status Information Microservice (SIMs) [![Build Status](https://travis-ci.org/scorpio-13/status-ms.svg?branch=master)](https://travis-ci.org/scorpio-13/status-ms)
 ===============================
 
 Introduction
@@ -63,10 +63,14 @@ Local execution steps
 
 - Option 1: With Docker
 	- Build and test Docker image.
-		
-			$ docker build . -t test-image
-			$ docker image ls
-			$ docker run -p9090:8080 test-image
+      			
+			$ docker build . -t status-ms:latest
+    - Verify Docker image built successfully
+      		
+			$ docker image ls status-ms:latest
+    - Run Docker image  
+
+			$ docker run -p8080:8080 status-ms:latest
 
 - Option 2: Without Docker
  
@@ -91,6 +95,19 @@ Local execution steps
 		- Generate Code Coverage Report
 				
 				$ ./gradlew jacocoTestReport
+
+Executing Existing Docker Image
+-------------------------------
+	
+	$ docker run -p8080:8080 scorpio13/status-ms:latest
+
+Testing REST endpoints
+----------------------
+
+- A Postman Collection with 2 endpoints is available in the source code(the collection is created for `localhost:8080`)
+	![](src/main/resources/static/SIMs-PostMan-Status.PNG)
+- From terminal `curl -X GET "http://localhost:8080/status" -H "accept: */*"`
+- From SwaggerUI - please refer to the `Technical Documentation` section.
 
 
 Coverage Report
@@ -118,9 +135,9 @@ Limitations and Risks
 
 Future Enhancements
 ------------------
-- **Lombok**
-- Circuit Breaker Pattern
-- Observability Matrix
-	- Acuator, New Relic, SUMO
+- Circuit Breaker Pattern - **Hystrix**
+- Build Observability - **Acuator, New Relic, SUMO**
 - BDD framework - **Spock**
-- Code Analysis Solution - **checkmarx, Synk**
+- Code Analysis Solution - **checkmarx, Snyk**
+- Code Quality - **SonarQube,Lombok**
+- Database Layer and search indexer
