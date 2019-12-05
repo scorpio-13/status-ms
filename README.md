@@ -3,7 +3,7 @@ Status Information Microservice (SIMs) [![Build Status](https://travis-ci.org/sc
 
 Introduction
 ------------
-The purpose of this project is to provide a basic Spring-boot Microservice  that enables developers the ability to Test, Build and Publish their work.
+The purpose of this project is to provide a basic Spring-boot Microservice  that enables developers the ability to test, build and publish their work.
 As a result, 2 endpoints will be made available:
 
 - A root `/` endpoint with a basic "Hello World" message.
@@ -120,21 +120,21 @@ Coverage Report
 Limitations and Risks
 ---------------------
 
-1. APIs should be on https
-2. APIs should have authentication and authorization integrated like **okta**
-3. CI needs to perform static analysis and composition analysis
-4. APIs need to be tested for performance
-5. Security hardening of API by pen-testing the application for common vulnerabilities.
-6. Database layer integration needs to be considered.
-7. Swagger schema should be defined.
-8. Contract testing framework like **packt** etc should be implemented
-9. Proper versioning semantics needs to be implemented
+1. **HTTPS** should be enabled to provide secure communication.
+2. APIs must integrate authentication and authorization providers like **okta, OPA**
+3. Security hardening of API should be considered, by **pen-testing** the application for common vulnerabilities.
+4. API/CODE/Docker image version strategies needs to be considered.
+5. CI needs to perform static analysis and composition analysis
+6. Bench-marking API performance.
+7. Contract testing framework like **packt** etc should be implemented
+8. Database layer integration needs to be considered.
+9. Swagger schema should be defined.
 10. Artefact storage and gradle caching needs to be implemented
-
+11. Deployment tooling and strategy should be considered.
 Future Enhancements
 ------------------
 - Circuit Breaker Pattern - **Hystrix**
-- Build Observability - **Acuator, New Relic, SUMO**
+- Build Observability - **Actuator, New Relic, SUMO**
 - BDD framework - **Spock**
 - Code Analysis Solution - **checkmarx, Snyk**
 - Code Quality - **SonarQube,Lombok**

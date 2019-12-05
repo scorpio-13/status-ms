@@ -8,6 +8,6 @@ services:
 
 script: 
   - docker build . -t scorpio13/status-ms:latest
-  - docker image ls
+  - docker image ls scorpio13/status-ms:latest
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push scorpio13/status-ms:latest
