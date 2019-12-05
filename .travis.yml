@@ -12,4 +12,8 @@ jobs:
       script: docker build . -t scorpio13/status-ms:latest
     - stage: "Docker check image built"
       script: docker image ls
-   
+    - stage: "Docker push"
+      script:
+        - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+        - docker push scorpio13/status-ms:latest
+        if: branch = master
