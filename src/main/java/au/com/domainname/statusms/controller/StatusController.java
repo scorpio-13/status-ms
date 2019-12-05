@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 import au.com.domainname.statusms.service.StatusService;
 
 /**
+ * This rest controller is responsible to fulfill the requests coming to
+ * URL('/status')
+ * 
  * @author Vasu Nayak
  *
  */
@@ -18,8 +21,13 @@ import au.com.domainname.statusms.service.StatusService;
 @RequestMapping(value = "/status")
 public class StatusController {
 
+	/**
+	 * Gets the application build status.
+	 *
+	 * @return the application build status
+	 */
 	@GetMapping
-	public ResponseEntity<?> getApplicationStatus() {
-		return StatusService.getApplicationStatus();
+	public ResponseEntity<?> getApplicationBuildStatus() {
+		return StatusService.getApplicationBuildStatus();
 	}
 }
