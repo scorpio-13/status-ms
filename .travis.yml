@@ -1,0 +1,15 @@
+language: java
+addons:
+  apt:
+    packages:
+      - docker-ce
+services:
+  - docker
+
+jobs:
+  include:
+    - stage: "Docker build"
+      script: docker build . -t scorpio13/status-ms:latest
+    - stage: "Docker check image built"
+      script: docker image ls
+   
