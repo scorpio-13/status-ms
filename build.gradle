@@ -5,7 +5,9 @@ plugins {
 }
 
 group = 'au.com.domainname'
-version = '0.0.1-SNAPSHOT'
+version = '1.0'
+description = 'pre-interview technical test'
+
 sourceCompatibility = '1.8'
 
 repositories {
@@ -14,9 +16,21 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	compile group: 'org.apache.commons', name: 'commons-lang3'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
+}
+
+processResources {
+     filesMatching('application.properties') {
+        filter org.apache.tools.ant.filters.ReplaceTokens, tokens: [                
+                projectName:  project.name,
+                projectVersion: project.version,
+                prjectDescription: project.description,
+                lastComitSHA: "git rev-parse --short HEAD".execute().text.trim()
+        ]
+     }
 }
 
 test {
