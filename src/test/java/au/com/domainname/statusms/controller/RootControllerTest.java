@@ -36,7 +36,7 @@ class RootControllerTest {
 	 */
 	@Test
 	void testGetMessage() {
-		when(rootController.getMessage()).thenReturn("Hello Testing World"); // TODO
+		when(rootController.getMessage()).thenReturn("Hello Testing World"); 
 		assertEquals(rootController.getMessage(), "Hello Testing World");
 	}
 
