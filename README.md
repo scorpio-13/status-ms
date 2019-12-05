@@ -50,8 +50,7 @@ Technical Documentation
 -----------------------
 
 	http://localhost:8080/swagger-ui.html#/
-
-![](src/main/resources/static/SIMs-SwaggerUI.PNG)
+![](src/main/resources/static/SIMs-SwaggerUI.png)
 
 Local execution steps 
 ----------------------
@@ -113,7 +112,6 @@ Testing REST endpoints
 Coverage Report
 --------------
 - **Unit Test Report** - `build/reports/tests/test/index.html`
-	
 ![](src/main/resources/static/SIMs-UnitTest.PNG)
 
 - **Code Coverage Report** - `build/reports/jacoco/index.html`
