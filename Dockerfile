@@ -12,13 +12,13 @@ USER gradle
 
 COPY --chown=gradle:gradle . /home/gradle/src
 
-RUN ./gradlew build
+RUN gradle build
 
 FROM openjdk:8-jre-slim
 
 WORKDIR /app
 
-EXPOSE 8081
+EXPOSE 8080
 
 COPY --from=build /home/gradle/src/build/libs/statusms-1.0.jar /app/statusms-1.0.jar
 
